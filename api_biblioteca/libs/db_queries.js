@@ -96,7 +96,7 @@ module.exports = {
 
     //// U S E R S ////
     getUser: async () => {
-        const queryResult = await query(`SELECT * FROM db_library.users`);
+        const queryResult = await query(`SELECT userID, name, user, role FROM db_library.users`);
         return queryResult;
     },
 

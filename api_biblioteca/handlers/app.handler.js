@@ -292,9 +292,5 @@ module.exports = {
         } else {
             res.status(401).json("Debes estar logueado y ser administrador");
         }
-    },
-
-    chau: (req,res) => {
-        res.status(200).json('CHAU');
     }
 }

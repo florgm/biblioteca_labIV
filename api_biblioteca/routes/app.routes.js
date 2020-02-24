@@ -19,6 +19,4 @@ module.exports = app => {
     app.delete('/loans/:loan', (req,res) => handler.deleteLoan(req,res));
 
     app.get('/info', (req,res) => handler.getInfo(req,res));
-
-    app.get('/hola', (req,res) => handler.chau(req,res));
 }

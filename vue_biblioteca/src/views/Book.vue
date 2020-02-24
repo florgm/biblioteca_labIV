@@ -114,7 +114,7 @@ export default {
         newQuantity: { required, minValue: minValue(1) }
     },
     mounted() {
-        axios.get('http://localhost:8080/books/' + this.$route.params.bookId)
+        axios.get('http://localhost:5555/books/' + this.$route.params.bookId)
         .then(response => {
             this.title = response.data[0].title
             this.author = response.data[0].author
@@ -147,7 +147,7 @@ export default {
                 return
             }
 
-            axios.put('http://localhost:8080/books/' + this.$route.params.bookId, {
+            axios.put('http://localhost:5555/books/' + this.$route.params.bookId, {
                 quantity: parseInt(this.newQuantity,10)
             })
             .then(response => {

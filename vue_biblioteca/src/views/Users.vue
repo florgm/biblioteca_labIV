@@ -63,7 +63,7 @@ export default {
         }
     },
     mounted() {
-        axios.get('http://localhost:8080/users')
+        axios.get('http://localhost:5555/users')
         .then(response => {
             this.users = response.data    
         })

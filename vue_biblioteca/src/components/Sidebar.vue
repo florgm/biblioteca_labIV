@@ -39,7 +39,7 @@ export default {
         onLogout(e) {
             e.preventDefault()
 
-            axios.post('http://localhost:8080/logout')
+            axios.post('http://localhost:5555/logout')
             .then(response => {
                 this.$store.commit('logout')
                 location.reload()

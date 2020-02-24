@@ -114,7 +114,7 @@ export default {
         }
     },
     mounted() {
-        axios.get('http://localhost:8080/books')
+        axios.get('http://localhost:5555/books')
         .then(response => {
             if(response.status == 200) {
                 this.exists = true
@@ -154,7 +154,7 @@ export default {
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.value) {
-                    axios.delete('http://localhost:8080/books/' + bookID)
+                    axios.delete('http://localhost:5555/books/' + bookID)
                     .then(response => {
                         Swal.fire({
                             title: 'Libro eliminado exitosamente',

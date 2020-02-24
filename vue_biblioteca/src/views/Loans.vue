@@ -110,7 +110,7 @@ export default {
     },
     mounted() {
         if(this.$store.state.role == 'L') {
-            axios.get('http://localhost:8080/loans')
+            axios.get('http://localhost:5555/loans')
             .then(response => {
                 if(response.status == 200) {
                     this.exists = true
@@ -131,7 +131,7 @@ export default {
                 }
             })
         } else {
-            axios.get('http://localhost:8080/loans/user/' + this.$store.state.userId)
+            axios.get('http://localhost:5555/loans/user/' + this.$store.state.userId)
             .then(response => {
                 if(response.status == 200) {
                     this.exists = true
@@ -184,7 +184,7 @@ export default {
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.value) {
-                    axios.delete('http://localhost:8080/loans/' + loanID)
+                    axios.delete('http://localhost:5555/loans/' + loanID)
                     .then(response => {
                         Swal.fire({
                             title: 'Libro devuelto exitosamente',

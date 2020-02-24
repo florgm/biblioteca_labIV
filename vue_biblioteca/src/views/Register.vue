@@ -133,7 +133,7 @@ export default {
                 return
             }
 
-            axios.post('http://localhost:8080/signup',{
+            axios.post('http://localhost:5555/signup',{
                     user: this.form.user,
                     name: this.form.name,
                     password: this.form.password

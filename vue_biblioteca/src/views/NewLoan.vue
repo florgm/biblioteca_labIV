@@ -102,7 +102,7 @@ export default {
         days: { required, minValue: minValue(1) }
     },
     mounted() {
-        axios.get('http://localhost:8080/books/' + this.$store.state.bookId)
+        axios.get('http://localhost:5555/books/' + this.$store.state.bookId)
         .then(response => {
             this.title = response.data[0].title
             this.author = response.data[0].author
@@ -134,7 +134,7 @@ export default {
                 return
             }
 
-            axios.post('http://localhost:8080/loans', {
+            axios.post('http://localhost:5555/loans', {
                 bookID: this.$store.state.bookId,
                 days: parseInt(this.days,10)
             })

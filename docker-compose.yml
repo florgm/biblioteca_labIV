@@ -1,9 +1,9 @@
 version: '3.7'
 services:
-  web:
-    build: .
+  api:
+    build: ./api_biblioteca
     ports:
-      - "8080:8080"
+      - "5555:5555"
     depends_on:
       - db
     environment:
@@ -13,7 +13,7 @@ services:
     volumes:
       - db:/var/lib/mysql
       - type: bind
-        source: ./docker_db
+        source: ./api_biblioteca/docker_db
         target: /docker-entrypoint-initdb.d
     restart: always
     environment:
@@ -21,6 +21,11 @@ services:
       MYSQL_USER: library
       MYSQL_ROOT_PASSWORD: library
       MYSQL_PASSWORD: library
+  front:
+    build: ./vue_biblioteca
+    ports:
+      - "8000:8080"
+    command: npm run serve
 
 volumes:
   db:

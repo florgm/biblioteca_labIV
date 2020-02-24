@@ -10,7 +10,7 @@ const HOUR = 1000 * 60 * 60
 const app = express();
 
 app.use(cors({
-    origin:"http://localhost:8081",
+    origin:"http://localhost:8000",
     credentials: true
 }));
 
@@ -34,14 +34,10 @@ app.use(bodyParser.json({ type: 'applicationlication/json' }));
 
 require('./routes/app.routes')(app);
 
-// var server = app.listen(8080, '0.0.0.0', function () {
-//   var host = server.address().address
-//   var port = server.address().port
-//   console.log("App listening at http://%s:%s", host, port)
-// })
+var server = app.listen(5555, () => console.log('API listening on port 5555'));
 
-var server = app.listen(8080, '127.0.0.1', function () {
-    var host = server.address().address
-    var port = server.address().port
-    console.log("App listening at http://%s:%s", host, port)
-  })
+// var server = app.listen(8080, '127.0.0.1', function () {
+//     var host = server.address().address
+//     var port = server.address().port
+//     console.log("App listening at http://%s:%s", host, port)
+// })

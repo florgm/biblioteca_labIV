@@ -1,8 +1,8 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-    // host: "db",
-    host: "localhost",
+    host: "db",
+    // host: "localhost",
     user: "library",
     password: "library",
     database: "db_library"

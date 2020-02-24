@@ -1,4 +1,4 @@
--- CREATE DATABASE IF NOT EXISTS bd_library;
+CREATE DATABASE IF NOT EXISTS bd_library;
 USE db_library;
 
 -- drop table bd_library.books;
@@ -19,7 +19,7 @@ create table db_library.users (
     name      varchar(40)     not null,
     user      varchar(20)     not null,
     pass      char(60)        not null,
-    role      char(1)         not null      default 'L',
+    role      char(1)         not null      default 'U',
     primary key (userID)
 );
 
@@ -32,3 +32,12 @@ create table db_library.loans (
     foreign key (bookID) references db_library.books(bookID),
     foreign key (userID) references db_library.users(userID)
 );
+
+insert into db_library.users (userID, name, user, pass, role) 
+values ("123456", "Admin", "admin", "$2b$08$NUHDSnjoR91F3JVxFizghO4qzpA1ZrnD5zyHefOJxy.xf.fZVwJrS", "L"),
+values ("654321", "Javi", "javi", "$2b$08$NUHDSnjoR91F3JVxFizghO4qzpA1ZrnD5zyHefOJxy.xf.fZVwJrS", "U")
+
+insert into db_library.books (bookID, title, author, quantity)
+values ("1", "Game of Thrones", "George R R Martin", "10"),
+values ("2", "Maze Runner", "James Dashner", "7"),
+values ("3", "Outlander", "Diana Gabaldon", "25")

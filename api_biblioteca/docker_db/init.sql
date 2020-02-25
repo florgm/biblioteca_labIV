@@ -35,9 +35,9 @@ create table db_library.loans (
 
 insert into db_library.users (userID, name, user, pass, role) 
 values ("123456", "Admin", "admin", "$2b$08$NUHDSnjoR91F3JVxFizghO4qzpA1ZrnD5zyHefOJxy.xf.fZVwJrS", "L"),
-       ("654321", "Javi", "javi", "$2b$08$NUHDSnjoR91F3JVxFizghO4qzpA1ZrnD5zyHefOJxy.xf.fZVwJrS", "U")
+       ("654321", "Javi", "javi", "$2b$08$NUHDSnjoR91F3JVxFizghO4qzpA1ZrnD5zyHefOJxy.xf.fZVwJrS", "U");
 
 insert into db_library.books (bookID, title, author, quantity)
 values ("1", "Game of Thrones", "George R R Martin", "10"),
        ("2", "Maze Runner", "James Dashner", "7"),
-       ("3", "Outlander", "Diana Gabaldon", "25")
+       ("3", "Outlander", "Diana Gabaldon", "25");
